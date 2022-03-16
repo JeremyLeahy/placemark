@@ -1,4 +1,5 @@
 import { v4 } from "uuid";
+import { infoMemStore } from "./info-mem-store.js";
 
 let coffeeShops = [];
 
@@ -14,7 +15,9 @@ export const coffeeShopMemStore = {
   },
 
   async getCoffeeShopById(id) {
-    return coffeeShops.find((coffeeShop) => coffeeShop._id === id);
+    const list = coffeeShops.find((coffeeShop) => coffeeShop._id === id);
+    list.details = await infoMemStore.getInfoByCoffeeShopId(list._id);
+    return list;
   },
 
   async deleteCoffeeShopById(id) {

@@ -5,7 +5,7 @@ export const dashboardController = {
     handler: async function (request, h) {
       const coffeeShops = await db.coffeeShopStore.getAllCoffeeShops();
       const viewData = {
-        title: "Coffee Time Dashboard",
+        title: "Coffee Spot Dashboard",
         coffeeShops: coffeeShops,
       };
       return h.view("dashboard-view", viewData);

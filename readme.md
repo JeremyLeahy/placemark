@@ -1,4 +1,4 @@
-# Project: Coffee Time (Placemark)
+# Project: Coffee Spot (Placemark)
 
 ## Description:
 

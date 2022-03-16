@@ -1,6 +1,7 @@
 import { dashboardController } from "./controllers/dashboard-controller.js";
 import { accountsController } from "./controllers/accounts-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
+import { coffeeShopController } from "./controllers/coffee-shop-controller.js";
 
 export const webRoutes = [
   { method: "GET", path: "/", config: accountsController.index },
@@ -13,4 +14,7 @@ export const webRoutes = [
 
   { method: "GET", path: "/dashboard", config: dashboardController.index },
   { method: "POST", path: "/dashboard/addcoffeeshop", config: dashboardController.addCoffeeShop },
+
+  { method: "GET", path: "/coffeeshop/{id}", config: coffeeShopController.index },
+  { method: "POST", path: "/coffeeshop/{id}/addinfo", config: coffeeShopController.addInfo },
 ];
