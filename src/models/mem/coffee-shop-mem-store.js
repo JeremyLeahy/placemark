@@ -20,6 +20,10 @@ export const coffeeShopMemStore = {
     return list;
   },
 
+  async getUserCoffeeShops(userid) {
+    return coffeeShops.filter((coffeeShop) => coffeeShop.userid === userid);
+  },
+
   async deleteCoffeeShopById(id) {
     const index = coffeeShops.findIndex((coffeeShop) => coffeeShop._id === id);
     coffeeShops.splice(index, 1);
