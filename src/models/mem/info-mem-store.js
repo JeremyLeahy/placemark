@@ -18,26 +18,24 @@ export const infoMemStore = {
     return details.filter((info) => info.coffeeShopid === id);
   },
 
-  async getTrackById(id) {
-    return tracks.find((track) => track._id === id);
+  async getInfoById(id) {
+    return details.find((info) => info._id === id);
   },
 
-  async getPlaylistTracks(playlistId) {
-    return tracks.filter((track) => track.playlistid === playlistId);
+  async getCoffeeShopInfo(coffeeShopId) {
+    return details.filter((info) => info.coffeeShopid === coffeeShopId);
   },
 
-  async deleteTrack(id) {
-    const index = tracks.findIndex((track) => track._id === id);
-    tracks.splice(index, 1);
+  async deleteInfo(id) {
+    const index = details.findIndex((info) => info._id === id);
+    details.splice(index, 1);
   },
 
-  async deleteAllTracks() {
+  async deleteAllInfo() {
     details = [];
   },
 
-  async updateTrack(track, updatedTrack) {
-    track.title = updatedTrack.title;
-    track.artist = updatedTrack.artist;
-    track.duration = updatedTrack.duration;
+  async updateInfo(info, updatedInfo) {
+    info.title = updatedInfo.title;
   },
 };

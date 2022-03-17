@@ -25,4 +25,12 @@ export const dashboardController = {
       return h.redirect("/dashboard");
     },
   },
+
+  deleteCoffeeShop: {
+    handler: async function (request, h) {
+      const coffeeShop = await db.coffeeShopStore.getCoffeeShopById(request.params.id);
+      await db.coffeeShopStore.deleteCoffeeShopById(coffeeShop._id);
+      return h.redirect("/dashboard");
+    },
+  },
 };
