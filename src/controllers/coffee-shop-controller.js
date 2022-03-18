@@ -22,4 +22,11 @@ export const coffeeShopController = {
       return h.redirect(`/coffeeshop/${coffeeShop._id}`);
     },
   },
+  deleteInfo: {
+    handler: async function (request, h) {
+      const coffeeShop = await db.coffeeShopStore.getCoffeeShopById(request.params.id);
+      await db.infoStore.deleteInfo(request.params.infoid);
+      return h.redirect(`/coffeeshop/${coffeeShop._id}`);
+    },
+  },
 };

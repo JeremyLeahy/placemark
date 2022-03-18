@@ -19,4 +19,5 @@ export const webRoutes = [
   { method: "POST", path: "/coffeeshop/{id}/addinfo", config: coffeeShopController.addInfo },
 
   { method: "GET", path: "/dashboard/deletecoffeeshop/{id}", config: dashboardController.deleteCoffeeShop },
+  { method: "GET", path: "/coffeeshop/{id}/deleteinfo/{infoid}", config: coffeeShopController.deleteInfo },
 ];
