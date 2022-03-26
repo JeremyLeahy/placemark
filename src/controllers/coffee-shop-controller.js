@@ -34,6 +34,7 @@ export const coffeeShopController = {
         description: request.payload.description,
       };
       await db.infoStore.addInfo(coffeeShop._id, newInfo);
+      // console.log(newInfo);
       return h.redirect(`/coffeeshop/${coffeeShop._id}`);
     },
   },

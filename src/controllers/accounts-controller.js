@@ -26,6 +26,7 @@ export const accountsController = {
     handler: async function (request, h) {
       const user = request.payload;
       await db.userStore.addUser(user);
+      console.log(user);
       return h.redirect("/");
     },
   },
@@ -47,6 +48,7 @@ export const accountsController = {
     handler: async function (request, h) {
       const { email, password } = request.payload;
       const user = await db.userStore.getUserByEmail(email);
+      console.log(user);
       if (!user || user.password !== password) {
         return h.redirect("/");
       }

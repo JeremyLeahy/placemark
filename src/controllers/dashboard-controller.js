@@ -30,6 +30,7 @@ export const dashboardController = {
         title: request.payload.title,
       };
       await db.coffeeShopStore.addCoffeeShop(newCoffeeShop);
+      console.log(newCoffeeShop);
       return h.redirect("/dashboard");
     },
   },
