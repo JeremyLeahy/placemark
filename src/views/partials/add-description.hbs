@@ -1,11 +1,17 @@
 <form class="box" action="/coffeeshop/{{coffeeShop._id}}/addinfo" method="POST">
-    <label>Enter Coffee Shop Description:</label>
+    <label>Enter Coffee Shop Details:</label>
     <div class="field is-horizontal">
         <div class="field-body">
             <div class="field">
-                <input class="input" type="text" placeholder="Add description" name="title">
+                <label class="label">Place Name</label>
+                <input class="input" type="text" placeholder="Add place name" name="placeName">
+            </div>
+
+            <div class="field">
+                <label class="label">Description</label>
+                <input class="input" type="text"  placeholder="Add description" name="description">
             </div>
         </div>
     </div>
-    <button class="button is-primary">Add Description</button>
+    <button class="button is-primary">Add Details</button>
 </form>
