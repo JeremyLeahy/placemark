@@ -11,9 +11,17 @@ export const db = {
   coffeeShopStore: null,
   infoStore: null,
 
-  init() {
-    this.userStore = userJsonStore;
-    this.coffeeShopStore = coffeeShopJsonStore;
-    this.infoStore = infoJsonStore;
+  init(storeType) {
+    switch (storeType) {
+      case "json":
+        this.userStore = userJsonStore;
+        this.coffeeShopStore = coffeeShopJsonStore;
+        this.infoStore = infoJsonStore;
+        break;
+      default:
+        this.userStore = userMemStore;
+        this.coffeeShopStore = coffeeShopMemStore;
+        this.infoStore = infoMemStore;
+    }
   },
 };

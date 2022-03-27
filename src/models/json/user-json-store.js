@@ -18,38 +18,21 @@ export const userJsonStore = {
     await db.write();
     return user;
   },
-  /*
-    async getUserById(id) {
-      await db.read();
-      return db.data.users.find((user) => user._id === id);
-    },
-  */
+
   async getUserById(id) {
     await db.read();
     let u = db.data.users.find((user) => user._id === id);
     if (u === undefined) u = null;
     return u;
   },
-  /*
-    async getUserByEmail(email) {
-      await db.read();
-      return db.data.users.find((user) => user.email === email);
-    },
-  */
+
   async getUserByEmail(email) {
     await db.read();
     let u = db.data.users.find((user) => user.email === email);
     if (u === undefined) u = null;
     return u;
   },
-  /*
-    async deleteUserById(id) {
-      await db.read();
-      const index = db.data.users.findIndex((user) => user._id === id);
-      db.data.users.splice(index, 1);
-      await db.write();
-    },
-  */
+
   async deleteUserById(id) {
     await db.read();
     const index = db.data.users.findIndex((user) => user._id === id);

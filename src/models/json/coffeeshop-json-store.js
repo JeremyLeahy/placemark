@@ -23,8 +23,12 @@ export const coffeeShopJsonStore = {
 
   async getCoffeeShopById(id) {
     await db.read();
-    const list = db.data.coffeeShops.find((coffeeShop) => coffeeShop._id === id);
-    list.details = await infoJsonStore.getInfoByCoffeeShopId(list._id);
+    let list = db.data.coffeeShops.find((coffeeShop) => coffeeShop._id === id);
+    if (list) {
+      list.details = await infoJsonStore.getInfoByCoffeeShopId(list._id);
+    } else {
+      list = null;
+    }
     return list;
   },
 
@@ -36,7 +40,7 @@ export const coffeeShopJsonStore = {
   async deleteCoffeeShopById(id) {
     await db.read();
     const index = db.data.coffeeShops.findIndex((coffeeShop) => coffeeShop._id === id);
-    db.data.coffeeShops.splice(index, 1);
+    if (index !== -1) db.data.coffeeShops.splice(index, 1);
     await db.write();
   },
 

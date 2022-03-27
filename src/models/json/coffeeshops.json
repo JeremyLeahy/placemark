@@ -1,9 +1,16 @@
 {
   "coffeeShops": [
     {
-      "userid": "a252a1e0-1665-4495-9d48-3803c161a522",
-      "title": "Tralee",
-      "_id": "83965b1f-7b6b-4a05-a518-a25d2c7136b2"
+      "title": "Ugly Mug",
+      "_id": "01e3bf18-43bb-4510-9100-691849551e56"
+    },
+    {
+      "title": "Meades Cafe",
+      "_id": "bb9ff908-6242-40e3-a41f-82145c2e1939"
+    },
+    {
+      "title": "Cafe Lucia",
+      "_id": "48f9145e-046f-4a77-b637-bf452b08173b"
     }
   ]
 }
