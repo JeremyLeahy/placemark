@@ -63,6 +63,104 @@ export const accountsController = {
     },
   },
 
+  showSettings: {
+    handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+      const user = await db.userStore.getUserById(loggedInUser._id);
+
+      const viewData = {
+        title: "User Settings",
+        user: user,
+      };
+      return h.view("user-settings-view", viewData);
+    },
+  },
+  /*
+  updateUser: {
+    handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+
+      const user = await db.userStore.getUserById(loggedInUser._id);
+      // const coffeeShops = await db.coffeeShopStore.getUserCoffeeShops(loggedInUser._id);
+      // const userUpdate = request.payload;
+      user.firstName = request.payload.firstName;
+      user.lastName = request.payload.lastName;
+      user.email = request.payload.email;
+      user.password = request.payload.password;
+      await db.userStore.updateUser(user);
+      console.log(user);
+
+      const viewData = {
+        title: "Coffee Spot Dashboard",
+        user: loggedInUser,
+      };
+
+      return h.view("dashboard-view");
+    },
+  },
+*/
+  updateUser: {
+    handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+      const user = await db.userStore.getUserById(loggedInUser._id);
+      const userUpdate = request.payload;
+
+      // user.firstName = request.payload.firstName;
+      // user.lastName = request.payload.lastName;
+      // user.email = request.payload.email;
+      // user.password = request.payload.password;
+      // const coffeeShops = await db.coffeeShopStore.getUserCoffeeShops(loggedInUser._id);
+      await db.userStore.updateUser(user, userUpdate);
+      console.log(userUpdate);
+
+      const viewData = {
+        title: "Coffee Spot Dashboard",
+        user: loggedInUser,
+        // coffeeShops: coffeeShops,
+      };
+      return h.view("dashboard-view", viewData);
+    },
+  },
+
+  /*
+  updateUser: {
+    handler: async function (request, h) {
+
+      const loggedInUser = request.auth.credentials;
+      const userUpdate = request.payload;
+      const user = await db.userStore.getUserById(loggedInUser._id);
+      const coffeeShops = await db.coffeeShopStore.getUserCoffeeShops(loggedInUser._id);
+
+      await db.userStore.updateUser( user, userUpdate);
+
+      const viewData = {
+        title: "Coffee Spot Dashboard",
+        user: loggedInUser,
+        coffeeShops: coffeeShops,
+      };
+      return h.view("dashboard-view", viewData);
+    },
+  },
+  */
+
+  /*
+  updateUser: {
+    handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+      const user = await db.userStore.getUserById(loggedInUser._id);
+      // user.firstName = request.payload.firstName;
+      // user.lastName = request.payload.lastName;
+      // user.email = request.payload.email;
+      // user.password = request.payload.password;
+
+      const user = request.payload;
+      await db.userStore.updateUser(loggedInUser._id, user);
+
+      return h.view("dashboard-view");
+    },
+  },
+*/
+
   async validate(request, session) {
     const user = await db.userStore.getUserById(session.id);
     if (!user) {

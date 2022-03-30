@@ -39,11 +39,22 @@ export const userJsonStore = {
     if (index !== -1) db.data.users.splice(index, 1);
     await db.write();
   },
-
+  /*
   async updateUser(id, updatedUser) {
     await db.read();
     let existingUser = this.getUserById(id);
     existingUser = updatedUser;
+    await db.write();
+  },
+ */
+  async updateUser(existingUser, updatedUser) {
+    const index = db.data.users.findIndex((user) => user === existingUser);
+    console.log(index);
+    db.data.users[index].firstName = updatedUser.firstName;
+    db.data.users[index].lastName = updatedUser.lastName;
+    db.data.users[index].email = updatedUser.email;
+    db.data.users[index].password = updatedUser.password;
+
     await db.write();
   },
 
