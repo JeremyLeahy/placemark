@@ -32,6 +32,8 @@ export const coffeeShopController = {
       const newInfo = {
         placeName: request.payload.placeName,
         description: request.payload.description,
+        latitude: request.payload.latitude,
+        longitude: request.payload.longitude,
       };
       await db.infoStore.addInfo(coffeeShop._id, newInfo);
       // console.log(newInfo);

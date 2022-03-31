@@ -3,6 +3,8 @@
     <tr>
         <th>Place Name</th>
         <th>Description</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
 
     </tr>
     </thead>
@@ -13,13 +15,24 @@
                 {{placeName}}
             </td>
 
+
             <td>
                 {{description}}
             </td>
+
             <td>
-            <a href="/coffeeshop/{{../coffeeShop._id}}/deleteinfo/{{_id}}" class="ui icon button">
-                <i class="fas fa-trash" color="red"></i>
-            </a>
+                {{latitude}}
+            </td>
+            <td>
+                {{longitude}}
+            </td>
+
+            <td>
+
+                <a href="/coffeeshop/{{../coffeeShop._id}}/deleteinfo/{{_id}}" class="ui icon button">
+                    <i class="fas fa-trash" color="red"></i>
+                </a>
+
             </td>
         </tr>
     {{/each}}
