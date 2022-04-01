@@ -6,6 +6,9 @@ import { userJsonStore } from "./json/user-json-store.js";
 import { coffeeShopJsonStore } from "./json/coffeeshop-json-store.js";
 import { infoJsonStore } from "./json/info-json-store.js";
 
+import { connectMongo } from "./mongo/connect.js";
+import { userMongoStore } from "./mongo/user-mongo-store.js";
+
 export const db = {
   userStore: null,
   coffeeShopStore: null,
@@ -17,6 +20,10 @@ export const db = {
         this.userStore = userJsonStore;
         this.coffeeShopStore = coffeeShopJsonStore;
         this.infoStore = infoJsonStore;
+        break;
+      case "mongo":
+        this.userStore = userMongoStore;
+        connectMongo();
         break;
       default:
         this.userStore = userMemStore;

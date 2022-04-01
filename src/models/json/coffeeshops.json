@@ -2,30 +2,15 @@
   "coffeeShops": [
     {
       "title": "Ugly Mug",
-      "_id": "2246550f-5c61-468f-b168-815902f011b9"
+      "_id": "12715bb9-5355-48d2-8d40-3c92b49b88e6"
     },
     {
       "title": "Meades Cafe",
-      "_id": "5c2a7b4f-d3a4-40f2-b3cb-9785f5f762bf"
+      "_id": "79418265-6d01-4c19-8191-077558ad804b"
     },
     {
       "title": "Cafe Lucia",
-      "_id": "733f836c-bcec-4c7c-b67f-ba38e866c7c4"
-    },
-    {
-      "userid": "59bd7c58-c136-40ce-b179-f74369162f19",
-      "title": "c ",
-      "_id": "334e790a-6aab-47b1-9599-d1a86e2f5a10"
-    },
-    {
-      "userid": "59bd7c58-c136-40ce-b179-f74369162f19",
-      "title": "fvdgfds",
-      "_id": "5ccd38dc-ce5d-4cdd-a6a5-46ea0854c818"
-    },
-    {
-      "userid": "59bd7c58-c136-40ce-b179-f74369162f19",
-      "title": "vfsddfsdf",
-      "_id": "02f1e4a1-49dd-4b68-95aa-abccdbc780cd"
+      "_id": "b199c121-9050-40fb-b585-7749382808f5"
     }
   ]
 }

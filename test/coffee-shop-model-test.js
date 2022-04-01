@@ -4,7 +4,7 @@ import { testCoffeeShops, testCoffeeShop } from "./fixtures.js";
 
 suite("Coffee Shop Model tests", () => {
   setup(async () => {
-    db.init("json");
+    db.init("mongo");
     await db.coffeeShopStore.deleteAllCoffeeShops();
     for (let i = 0; i < testCoffeeShops.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop

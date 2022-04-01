@@ -1,10 +1,12 @@
 import { assert } from "chai";
 import { db } from "../src/models/db.js";
 import { boba, testUsers } from "./fixtures.js";
+// eslint-disable-next-line import/no-unresolved
+import { assertSubset } from "./test-utils.js";
 
 suite("User API tests", () => {
   setup(async () => {
-    db.init("json");
+    db.init("mongo");
     await db.userStore.deleteAll();
     for (let i = 0; i < testUsers.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
@@ -14,7 +16,8 @@ suite("User API tests", () => {
 
   test("create a user", async () => {
     const newUser = await db.userStore.addUser(boba);
-    assert.deepEqual(boba, newUser);
+    assertSubset(boba, newUser);
+    // assert.deepEqual(boba, newUser);
   });
 
   test("delete all users", async () => {

@@ -18,6 +18,8 @@ export const webRoutes = [
   { method: "GET", path: "/coffeeshop/{id}", config: coffeeShopController.index },
   { method: "POST", path: "/coffeeshop/{id}/addinfo", config: coffeeShopController.addInfo },
 
+  { method: "GET", path: "/coffeeshop/{id}/updateinfo/{infoid}", config: coffeeShopController.updateInfo },
+
   { method: "GET", path: "/dashboard/deletecoffeeshop/{id}", config: dashboardController.deleteCoffeeShop },
   { method: "GET", path: "/coffeeshop/{id}/deleteinfo/{infoid}", config: coffeeShopController.deleteInfo },
 

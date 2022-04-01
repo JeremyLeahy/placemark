@@ -39,6 +39,31 @@ export const coffeeShopController = {
     },
   },
 
+  updateInfo: {
+    handler: async function (request, h) {
+      const currentInfo = await db.infoStore.getInfoById(request.params.infoid);
+      coffeeShop = await db.coffeeShopStore.getCoffeeShopById(request.params.id);
+
+      const infoUpdate = {
+        placeName: request.payload.placeName,
+        description: request.payload.description,
+        latitude: request.payload.latitude,
+        longitude: request.payload.longitude,
+      };
+
+      await db.infoStore.updateInfo(currentInfo, infoUpdate);
+
+      console.log(infoUpdate);
+
+      const viewData = {
+        title: "Coffee Spot Details",
+        coffeeShop: coffeeShop,
+      };
+      // return h.redirect(`/coffeeshop/${coffeeShop._id}`);
+      return h.view("update-info-view", viewData);
+    },
+  },
+
   deleteInfo: {
     handler: async function (request, h) {
       coffeeShop = await db.coffeeShopStore.getCoffeeShopById(request.params.id);
