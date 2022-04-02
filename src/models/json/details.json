@@ -25,6 +25,14 @@
       "longitude": "9.7062W",
       "_id": "caa31ebb-3c24-4169-9e43-f04618bb885d",
       "coffeeShopid": "015dc6a3-d84b-42a2-810e-d76a69786f46"
+    },
+    {
+      "placeName": "Tralee",
+      "description": "                qqqqqq",
+      "latitude": "52.2697N",
+      "longitude": "9.7062W",
+      "_id": "a877a670-ce4a-4fe0-af0d-de0247497561",
+      "coffeeShopid": "6a4728ef-f2bb-4441-8152-ed14d1dd3ebf"
     }
   ]
 }

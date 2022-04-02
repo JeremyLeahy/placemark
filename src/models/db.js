@@ -5,6 +5,7 @@ import { infoMemStore } from "./mem/info-mem-store.js";
 import { userJsonStore } from "./json/user-json-store.js";
 import { coffeeShopJsonStore } from "./json/coffeeshop-json-store.js";
 import { infoJsonStore } from "./json/info-json-store.js";
+import { adminJsonStore } from "./json/admin-json-store.js";
 
 import { connectMongo } from "./mongo/connect.js";
 import { userMongoStore } from "./mongo/user-mongo-store.js";
@@ -13,6 +14,8 @@ export const db = {
   userStore: null,
   coffeeShopStore: null,
   infoStore: null,
+  // adminStore: { adminUsers: [] },
+  adminStore: null,
 
   init(storeType) {
     switch (storeType) {
@@ -20,9 +23,11 @@ export const db = {
         this.userStore = userJsonStore;
         this.coffeeShopStore = coffeeShopJsonStore;
         this.infoStore = infoJsonStore;
+        this.adminStore = adminJsonStore;
         break;
       case "mongo":
         this.userStore = userMongoStore;
+
         connectMongo();
         break;
       default:

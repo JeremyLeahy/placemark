@@ -1,0 +1,12 @@
+{
+  "adminUsers": [
+    {
+      "email": "kenobi@sw.com",
+      "password": "secret"
+    },
+    {
+      "email": "vadar@sw.com",
+      "password": "secret"
+    }
+  ]
+}
