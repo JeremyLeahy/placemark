@@ -1,0 +1,32 @@
+<form class="box" action="/coffeeshop/{{coffeeShop._id}}/addinfo" method="POST">
+    <label>Enter Coffee Shop Details:</label>
+
+    <div class="field is-horizontal">
+        <div class="field-body">
+            <div class="field">
+                <label class="label">Place Name</label>
+                <input class="input" type="text" placeholder="Add place name" name="placeName">
+            </div>
+
+            <div class="field">
+                <label class="label">Description</label>
+                <div class="control">
+                <textarea class="textarea" maxlength="250" placeholder="Add Description" name="description">
+                </textarea>
+                </div>
+            </div>
+
+
+            <div class="field">
+                <label class="label">Latitude</label>
+                <input class="input" type="text"  step="0.0000001" maxlength="9" min="-90.0000" max="90.0000" placeholder="Enter Latitude" name="latitude">
+            </div>
+            <div class="field">
+                <label class="label">Longitude</label>
+                <input class="input" type="text"  step="0.0000001" maxlength="9" min="-180.0000" max="180.0000"placeholder="Enter Longitude" name="longitude">
+            </div>
+
+        </div>
+    </div>
+    <button class="button is-primary">Add Details</button>
+</form>

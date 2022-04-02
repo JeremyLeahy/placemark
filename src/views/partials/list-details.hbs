@@ -1,0 +1,42 @@
+<table class="table is-fullwidth">
+    <thead>
+    <tr>
+        <th>Place Name</th>
+        <th>Description</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {{#each coffeeShop.details}}
+        <tr>
+            <td>
+                {{placeName}}
+            </td>
+
+
+            <td>
+                {{description}}
+            </td>
+
+            <td>
+                {{latitude}}
+            </td>
+            <td>
+                {{longitude}}
+            </td>
+
+            <td>
+                <a href="/coffeeshop/{{../coffeeShop._id}}/updateinfo/{{_id}}/{{placeName}}/{{description}}/{{latitude}}/{{longitude}}" class="ui icon button">
+                    <i class=" fas fa-edit" color="blue"></i>
+                </a>
+                <a href="/coffeeshop/{{../coffeeShop._id}}/deleteinfo/{{_id}}" class="ui icon button">
+                    <i class="fas fa-trash" color="red"></i>
+                </a>
+
+            </td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>

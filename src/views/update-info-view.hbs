@@ -1,0 +1,38 @@
+{{> menu active="update info"}}
+
+<section class="section">
+
+<h1 class="title">Update Coffee Shop details</h1>
+<form class="box" action="/coffeeshop/{{coffeeShop._id}}/updateinfo/{{info._id}}" method="POST">
+
+    <input class = "input" name = "_id"  value = {{info._id}}></input>
+    <div class="field is-horizontal">
+        <div class="field-body">
+            <div class="field">
+                <label class="label">Place Name</label>
+                <input class="input" type="text"  name="placeName" value = {{info.placeName}}>
+            </div>
+
+            <div class="field">
+                <label class="label">Description</label>
+                <div class="control">
+                <textarea class="textarea is-input has-fixed-size" type="text" maxlength="250"  name="description" value = {{info.description}}>
+                </textarea>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Latitude</label>
+                <input class="input" type="text" step="0.0000001" maxlength="9" min="-90.0000" max="90.0000"  name="latitude" value = {{info.latitude}}>
+            </div>
+            <div class="field">
+                <label class="label">Longitude</label>
+                <input class="input" type="text" step="0.0000001" maxlength="9" min="-180.0000" max="180.0000" name="longitude" value = {{info.longitude}}>
+            </div>
+
+        </div>
+    </div>
+    <button class="button is-success">Update Details</button>
+</form>
+
+</section>

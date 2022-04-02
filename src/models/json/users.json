@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "firstName": "Luke",
+      "lastName": "Skywalker",
+      "email": "luke@sw.com",
+      "password": "secret",
+      "_id": "4d01aba0-2ff5-4c52-8c9b-c4862e344deb"
+    },
+    {
+      "firstName": "Han",
+      "lastName": "Solo",
+      "email": "solo@sw.com",
+      "password": "secret",
+      "_id": "9f3d26f8-58db-4d8d-8dac-9ed124fc2af9"
+    },
+    {
+      "firstName": "Lando",
+      "lastName": "Calrission",
+      "email": "lando@sw.com",
+      "password": "secret",
+      "_id": "0453af0a-e27c-4cb0-bef1-2c833a0b96b5"
+    },
+    {
+      "firstName": "jjjjjjjj",
+      "lastName": "j",
+      "email": "j@j.com",
+      "password": "j",
+      "_id": "de901b84-bb0d-4675-89e2-f8515a779cf3"
+    },
+    {
+      "firstName": "James",
+      "lastName": "Bondy",
+      "email": "james@bond.com",
+      "password": "bond",
+      "_id": "3b04b4a9-dd47-45ef-966e-1561ce46a9f7"
+    }
+  ]
+}

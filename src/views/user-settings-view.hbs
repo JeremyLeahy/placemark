@@ -1,0 +1,31 @@
+{{> welcome-menu active="user settings"}}
+
+<section class="section">
+    <h2 class="title">User Settings</h2>
+    <form action="/updateuser" method="POST">
+
+
+
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field">
+                    <label class="label">First Name</label>
+                    <input class="input" type="text"  name="firstName"value ="{{user.firstName}}">
+                </div>
+                <div class="field">
+                    <label class="label">Last Name</label>
+                    <input class="input" type="text" name="lastName" value="{{user.lastName}}">
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Email</label> <input class="input" type="text"  name="email" value="{{user.email}}">
+        </div>
+        <div class="field">
+            <label class="label">Password</label> <input class="input" type="password"  name="password" value="{{user.password}}">
+        </div>
+        <div class="field is-grouped">
+            <button class="button is-success">Update</button>
+        </div>
+    </form>
+</section>

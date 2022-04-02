@@ -1,0 +1,12 @@
+{{> menu}}
+
+<section class="section">
+    <div class="title">
+        {{coffeeShop.title}}
+    </div>
+    {{> list-details}}
+
+    {{#ifIsZero countCoffee}}
+    {{> add-description}}
+    {{/ifIsZero}}
+</section>
