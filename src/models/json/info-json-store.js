@@ -32,7 +32,6 @@ export const infoJsonStore = {
 
   async getNumberByCoffeeShopId(id) {
     await db.read();
-
     if (db.data.details.findIndex((info) => info.coffeeShopid === id) >= 0) return 1;
     return 0;
   },

@@ -9,6 +9,8 @@ import { adminJsonStore } from "./json/admin-json-store.js";
 
 import { connectMongo } from "./mongo/connect.js";
 import { userMongoStore } from "./mongo/user-mongo-store.js";
+import { coffeeShopMongoStore } from "./mongo/coffeeshop-mongo-store.js";
+import { infoMongoStore } from "./mongo/info-mongo-store.js";
 
 export const db = {
   userStore: null,
@@ -27,7 +29,8 @@ export const db = {
         break;
       case "mongo":
         this.userStore = userMongoStore;
-
+        this.coffeeShopStore = coffeeShopMongoStore;
+        this.infoStore = infoMongoStore;
         connectMongo();
         break;
       default:

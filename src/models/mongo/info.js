@@ -7,11 +7,10 @@ const infoSchema = new Schema({
   description: String,
   latitude: String,
   longitude: String,
-
   coffeeshopid: {
     type: Schema.Types.ObjectId,
     ref: "coffeeShop",
   },
 });
 
-export const Track = Mongoose.model("Info", infoSchema);
+export const Info = Mongoose.model("Info", infoSchema);

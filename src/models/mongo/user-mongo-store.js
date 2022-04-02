@@ -34,6 +34,17 @@ export const userMongoStore = {
     }
   },
 
+  async updateUser(existingUser, updatedUser) {
+    const index = db.data.users.findIndex((user) => user === existingUser);
+    console.log(index);
+    db.data.users[index].firstName = updatedUser.firstName;
+    db.data.users[index].lastName = updatedUser.lastName;
+    db.data.users[index].email = updatedUser.email;
+    db.data.users[index].password = updatedUser.password;
+
+    await db.write();
+  },
+
   async deleteAll() {
     await User.deleteMany({});
   },
