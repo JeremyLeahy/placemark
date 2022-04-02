@@ -29,25 +29,32 @@ export const infoJsonStore = {
     await db.read();
     return db.data.details.find((info) => info._id === id);
   },
-  /*
-  async updateInfo(existingInfo, updatedInfo) {
-    const index = db.data.details.findIndex((info) => info === existingInfo);
-    // console.log(updatedInfo);
-    console.log(index);
-    db.data.details[index].placeName = updatedInfo.placeName;
-    db.data.details[index].description = updatedInfo.firstName;
-    db.data.details[index].latitude = updatedInfo.latitude;
-    db.data.details[index].longitude = updatedInfo.longitude;
-    // db.data.details[index] = updatedInfo;
-    await db.write();
-  },
-*/
 
+  async getNumberByCoffeeShopId(id) {
+    await db.read();
+
+    if (db.data.details.findIndex((info) => info.coffeeShopid === id) >= 0) return 1;
+    return 0;
+  },
+
+  /*
   async updateInfo(info, updatedInfo) {
     info.placeName = updatedInfo.placeName;
     info.description = updatedInfo.description;
     info.latitude = updatedInfo.latitude;
     info.longitude = updatedInfo.longitude;
+    await db.write();
+  },
+*/
+
+  async updateInfo(existingInfo, updatedInfo) {
+    const index = db.data.details.findIndex((info) => info._id === existingInfo._id);
+    console.log(existingInfo);
+    console.log(index);
+
+    updatedInfo._id = existingInfo._id;
+    updatedInfo.coffeeShopid = existingInfo.coffeeShopid;
+    db.data.details[index] = updatedInfo;
     await db.write();
   },
 

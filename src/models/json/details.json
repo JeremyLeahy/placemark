@@ -17,6 +17,14 @@
       "description": "                    cdscs",
       "_id": "7e31911c-b52d-4775-afce-dbf9df9ebd14",
       "coffeeShopid": "334e790a-6aab-47b1-9599-d1a86e2f5a10"
+    },
+    {
+      "placeName": "Dungarvan",
+      "description": "           great atmosphere     ",
+      "latitude": "52.2697N",
+      "longitude": "9.7062W",
+      "_id": "caa31ebb-3c24-4169-9e43-f04618bb885d",
+      "coffeeShopid": "015dc6a3-d84b-42a2-810e-d76a69786f46"
     }
   ]
 }

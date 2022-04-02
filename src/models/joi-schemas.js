@@ -15,6 +15,8 @@ export const UserCredentialsSpec = {
 export const InfoSpec = {
   placeName: Joi.string().required(),
   description: Joi.string().required(),
+  latitude: Joi.string().optional(),
+  longitude: Joi.string().optional(),
 };
 
 export const CoffeeShopSpec = {

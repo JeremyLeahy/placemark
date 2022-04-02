@@ -50,7 +50,7 @@ async function init() {
   });
   server.auth.default("session");
 
-  db.init("mongo");
+  db.init("json");
   server.route(webRoutes);
   await server.start();
   console.log("Server running on %s", server.info.uri);
@@ -59,6 +59,13 @@ async function init() {
 process.on("unhandledRejection", (err) => {
   console.log(err);
   process.exit(1);
+});
+
+Handlebars.registerHelper("ifIsZero", function (value, options) {
+  if (value === 0) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
 });
 
 init();

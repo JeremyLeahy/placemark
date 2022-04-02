@@ -5,5 +5,8 @@
         {{coffeeShop.title}}
     </div>
     {{> list-details}}
+
+    {{#ifIsZero countCoffee}}
     {{> add-description}}
+    {{/ifIsZero}}
 </section>
