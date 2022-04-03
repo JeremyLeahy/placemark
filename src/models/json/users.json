@@ -22,18 +22,11 @@
       "_id": "0453af0a-e27c-4cb0-bef1-2c833a0b96b5"
     },
     {
-      "firstName": "jjjjjjjj",
-      "lastName": "j",
-      "email": "j@j.com",
-      "password": "j",
-      "_id": "de901b84-bb0d-4675-89e2-f8515a779cf3"
-    },
-    {
       "firstName": "James",
-      "lastName": "Bondy",
-      "email": "james@bond.com",
+      "lastName": "Bond",
+      "email": "bond@bond.com",
       "password": "bond",
-      "_id": "3b04b4a9-dd47-45ef-966e-1561ce46a9f7"
+      "_id": "a05c5924-0e73-4a66-bae8-4f05b6ab291e"
     }
   ]
 }

@@ -26,3 +26,9 @@ Local server
 npm install
 
 npm start
+
+## Issues
+
+- mongo db data not fully functional (/mongo/info-mongo-store/getNumberByCoffeeShopId(id))
+- Description not being displayed on update info view
+
